@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "501413303083",
+    "project_id": "firstsocial-18516",
+    "storage_bucket": "firstsocial-18516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501413303083:android:979d36bff2304f9983ab6e",
+        "android_client_info": {
+          "package_name": "com.example.social_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVOJmvRAqJ3w3pjKyNUPvPmpHRPju_iWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
