@@ -13,3 +13,6 @@ class AppErrorStates extends AppStates {
     this.error,
   );
 }
+
+
+class AppChangBottomNavState extends AppStates {}
