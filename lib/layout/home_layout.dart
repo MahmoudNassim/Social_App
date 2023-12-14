@@ -3,6 +3,7 @@ import 'package:conditional_builder_null_safety/conditional_builder_null_safety.
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:social_app/modules/newpost/new_post_screen.dart';
 import 'package:social_app/shared/component/component.dart';
 import 'package:social_app/shared/cubit/cubit.dart';
 import 'package:social_app/shared/cubit/states.dart';
@@ -13,7 +14,11 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AppCubit, AppStates>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is AppNewPostState) {
+          navigateTo(context, NewPostScreen());
+        }
+      },
       builder: (context, state) {
         var cubit = AppCubit.get(context);
         return Scaffold(
@@ -30,9 +35,10 @@ class HomeLayout extends StatelessWidget {
               onTap: (index) {
                 cubit.changeBottomNav(index);
               },
-              items: [
+              items: const[
                 BottomNavigationBarItem(label: 'Feeds', icon: Icon(Icons.home)),
                 BottomNavigationBarItem(label: 'Chats', icon: Icon(Icons.chat)),
+                BottomNavigationBarItem(label: 'addPosts', icon: Icon(Icons.post_add)),
                 BottomNavigationBarItem(
                     label: 'Users', icon: Icon(Icons.location_on_outlined)),
                 BottomNavigationBarItem(

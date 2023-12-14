@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_app/models/usermodel.dart';
 import 'package:social_app/modules/chats/chats_screen.dart';
 import 'package:social_app/modules/feeds/feeds_screen.dart';
+import 'package:social_app/modules/newpost/new_post_screen.dart';
 import 'package:social_app/modules/settings/settings_screen.dart';
 import 'package:social_app/modules/users/users_screen.dart';
 import 'package:social_app/shared/cubit/states.dart';
@@ -36,13 +36,18 @@ class AppCubit extends Cubit<AppStates> {
   List<Widget> screens = [
     FeedsScreen(),
     ChatsScreen(),
+    NewPostScreen(),
     UsersScreen(),
     SettingsScreen(),
   ];
-  List<String> titles = ['Home', 'Chats', 'Users', 'Settings'];
+  List<String> titles = ['Home', 'Chats','Posts', 'Users', 'Settings'];
 
   changeBottomNav(int index) {
-    currentIndex = index;
-    emit(AppChangBottomNavState());
+    if (index == 2) {
+      emit(AppNewPostState());
+    } else {
+      currentIndex = index;
+      emit(AppChangBottomNavState());
+    }
   }
 }

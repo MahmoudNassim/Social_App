@@ -12,7 +12,7 @@ void navigateAndFinish(context, widget) => Navigator.pushAndRemoveUntil(
     (Route<dynamic> route) => false);
 
 Widget defaultTextButton({
-  required Function()? function,
+  required Function() function,
   required String text,
 }) =>
     TextButton(
@@ -57,7 +57,7 @@ Widget defaultTextFormField({
 Widget defaultButton({
   double width = double.infinity,
   required String text,
-  required void Function() function,
+  required  Function() function,
   BuildContext? context,
 }) =>
     SizedBox(
@@ -65,8 +65,9 @@ Widget defaultButton({
       child: ElevatedButton(
         onPressed: function,
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context!).primaryColor,
-          onPrimary: Colors.white, // Set text color to white
+          foregroundColor: Colors.white,
+          backgroundColor:
+              Theme.of(context!).primaryColor, // Set text color to white
         ),
         child: Text(
           text.toUpperCase(),

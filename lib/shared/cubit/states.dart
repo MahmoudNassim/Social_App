@@ -15,4 +15,6 @@ class AppErrorStates extends AppStates {
 }
 
 
+class AppNewPostState extends AppStates {}
+
 class AppChangBottomNavState extends AppStates {}

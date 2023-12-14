@@ -4,8 +4,11 @@ import 'package:hexcolor/hexcolor.dart';
 
 ThemeData LightTheme = ThemeData(
   brightness: Brightness.light,
-  primarySwatch: Colors.deepOrange,
+  primarySwatch: Colors.blue,
   scaffoldBackgroundColor: Colors.white,
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: Colors.blue
+  ),
   appBarTheme: const AppBarTheme(
       titleSpacing: 20,
       systemOverlayStyle: SystemUiOverlayStyle(
