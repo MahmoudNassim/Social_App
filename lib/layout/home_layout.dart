@@ -1,6 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_app/modules/newpost/new_post_screen.dart';
@@ -38,7 +35,7 @@ class HomeLayout extends StatelessWidget {
               items: const[
                 BottomNavigationBarItem(label: 'Feeds', icon: Icon(Icons.home)),
                 BottomNavigationBarItem(label: 'Chats', icon: Icon(Icons.chat)),
-                BottomNavigationBarItem(label: 'addPosts', icon: Icon(Icons.post_add)),
+                BottomNavigationBarItem(label: 'addPost', icon: Icon(Icons.post_add)),
                 BottomNavigationBarItem(
                     label: 'Users', icon: Icon(Icons.location_on_outlined)),
                 BottomNavigationBarItem(

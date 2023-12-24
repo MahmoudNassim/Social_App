@@ -25,10 +25,10 @@ class RegisterCubit extends Cubit<RegisterStates> {
         .createUserWithEmailAndPassword(
       email: email,
       password: password,
-    )
-        .then((value) {
+    ).then((value) {
       print(value.user!.uid);
       userCreate(email: email, name: name, phone: phone, uId: value.user!.uid);
+      emit(RegisterSuccessState(value.user!.uid));
     }).catchError((error) {
       print(error.toString());
       emit(RegisterErrorState(error));
@@ -44,10 +44,10 @@ class RegisterCubit extends Cubit<RegisterStates> {
       name: name,
       email: email,
       phone: phone,
-      uId: uId,
+      uId: 'IiS83XKHFdeVpZQbKWR7yO81c2b2',
       bio: 'Write Your bio.....',
       image: 'https://img.freepik.com/free-photo/3d-rendering-ice-hockey-player_23-2150898762.jpg?t=st=1702306368~exp=1702309968~hmac=9cf561992fce46b219a185f768204cb8c84cd73bc0c74b9df9a1c45d3e881dc2&w=740',
-      cover: 'https://img.freepik.com/free-photo/photo-overjoyed-hipster-looks-gladfully-away-points-fore-finger-blank-space_273609-25559.jpg?w=900&t=st=1702216902~exp=1702217502~hmac=c4d0b7d1ccbbaa81b7578b4f98e07f74fd84c556422d7ebc0347208f2e61039c',
+      cover: 'https://i.pinimg.com/736x/00/a7/81/00a781cc93f26bc0b753e18b240673e2.jpg',
       isEmailVerified: false,
     );
     FirebaseFirestore.instance

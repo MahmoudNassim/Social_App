@@ -6,7 +6,12 @@ class RegisterInitialState extends RegisterStates {}
 
 class RegisterLodingState extends RegisterStates {}
 
-class RegisterSuccessState extends RegisterStates {}
+class RegisterSuccessState extends RegisterStates {
+    String state;
+  RegisterSuccessState(
+    this.state,
+  );
+  }
 
 class RegisterErrorState extends RegisterStates {
   String error;

@@ -20,9 +20,9 @@ class RegisterScreen extends StatelessWidget {
       create: (context) => RegisterCubit(),
       child: BlocConsumer<RegisterCubit, RegisterStates>(
         listener: (context, state) {
-           if (state is CreateUserSuccessState) {
-             navigateAndFinish(context, HomeLayout()); 
-           }
+          if (state is CreateUserSuccessState) {
+            navigateAndFinish(context, HomeLayout());
+          }
         },
         builder: (context, state) {
           var cubit = RegisterCubit.get(context);
@@ -96,8 +96,7 @@ class RegisterScreen extends StatelessWidget {
                           obsecuretext: RegisterCubit.get(context).isVisibale,
                           onSumbit: (value) {},
                           suffixpressed: () {
-                           cubit
-                                .changVisibilityPassword();
+                            cubit.changVisibilityPassword();
                           },
                           validate: (String? value) {
                             if (value!.isEmpty) {
